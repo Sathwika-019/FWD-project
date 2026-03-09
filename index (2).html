@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCalorie Tracker - Track Your Exercise Calories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">FitCalorie</h1>
+            <div class="nav-links">
+                <span id="userDisplay"></span>
+                <button id="logoutBtn" class="btn-logout">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="hero">
+            <h2>Track Your Calories Burned</h2>
+            <p>Monitor your fitness progress with our exercise calorie calculator</p>
+        </section>
+
+        <section class="calculator-section">
+            <div class="calculator-card">
+                <h3>Calculate Calories Burned</h3>
+                <form id="calorieForm">
+                    <div class="form-group">
+                        <label for="weight">Your Weight (kg):</label>
+                        <input type="number" id="weight" required min="20" max="300" step="0.1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exercise">Select Exercise:</label>
+                        <select id="exercise" required>
+                            <option value="">Choose an exercise...</option>
+                            <option value="running-fast">Running (10 km/h)</option>
+                            <option value="running-moderate">Running (8 km/h)</option>
+                            <option value="walking">Walking (5 km/h)</option>
+                            <option value="cycling-fast">Cycling (25-30 km/h)</option>
+                            <option value="cycling-moderate">Cycling (15-20 km/h)</option>
+                            <option value="swimming">Swimming</option>
+                            <option value="jump-rope">Jump Rope</option>
+                            <option value="weightlifting">Weight Lifting</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="dancing">Dancing</option>
+                            <option value="basketball">Basketball</option>
+                            <option value="football">Football/Soccer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes):</label>
+                        <input type="number" id="duration" required min="1" max="480">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Calculate Calories</button>
+                </form>
+
+                <div id="result" class="result-display"></div>
+            </div>
+        </section>
+
+        <section class="exercise-grid">
+            <h3>Exercise Reference Table</h3>
+            <div class="exercise-cards">
+                <div class="exercise-card">
+                    <h4>🏃 Running (Fast)</h4>
+                    <p class="calories">12.5 cal/min/kg</p>
+                    <p class="description">10 km/h pace</p>
+                </div>
+                <div class="exercise-card">
+                    <h4>🚶 Walking</h4>
+                    <p class="calories">3.5 cal/min/kg</p>
+                    <p class="description">5 km/h pace</p>
+                </div>
+                <div class="exercise-card">
+                    <h4>🚴 Cycling</h4>
+                    <p class="calories">8 cal/min/kg</p>
+                    <p class="description">Moderate pace</p>
+                </div>
+                <div class="exercise-card">
+                    <h4>🏊 Swimming</h4>
+                    <p class="calories">10 cal/min/kg</p>
+                    <p class="description">Moderate pace</p>
+                </div>
+                <div class="exercise-card">
+                    <h4>🏋️ Weight Lifting</h4>
+                    <p class="calories">6 cal/min/kg</p>
+                    <p class="description">General training</p>
+                </div>
+                <div class="exercise-card">
+                    <h4>🧘 Yoga</h4>
+                    <p class="calories">3 cal/min/kg</p>
+                    <p class="description">Hatha yoga</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <h3>Your Exercise History</h3>
+            <div id="historyList" class="history-list"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
